@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<%- include ('../../partials/head.ejs') %>
+	
+</head>
+<body>
+	
+	<!-- entete de la page -->
+	<header>
+		<%- include ('../../partials/header.ejs') %>
+	</header>
+	
+	<!-- le navbar de la page -->
+	<nav>
+		<%- include ('../../partials/nav.ejs') %>
+		
+	</nav>
+	
+	<!-- le contenu -->
+	<main>
+		<h3><%= title %></h3>
+		
+		<div>
+			<article id="art2">
+				
+				
+				<form action="/ajout", method="POST">
+					<label>Titre: </label>
+					<input type="text" placeholder="donnez le titre" name="titre" /><br>
+					
+					<label>Description: </label>
+					<input type="text" placeholder="donnez la description" name="description" /><br>
+					
+					<label>Année: </label>
+					<input type="text" placeholder="donnez l'année" name="annee"/><br>
+					
+					<label>Auteur: </label>
+					<input type="text" placeholder="donnez l'auteur" name="auteur" /><br>
+					
+					<label>Genre: </label>
+					<select name="genre" id="genre">
+						<option value="ACTION">Action</option>
+						<option value="ROMANCE">Romance</option>
+						<option value="DRAME">Drame</option>
+						<option value="COMEDIE">Comédie</option>
+						<option value="ANIME">Dessin animé</option>
+					</select><br>
+					
+					
+					<label>Catégorie film: </label>
+					<input type="radio" value="1" name="categorie" /> Film
+					<input type="radio" value="0" name="categorie" /> Série
+					<br><br><br><br><br>
+					
+					<button type="submit">Ajouter</button>&nbsp;
+					<a href="/">Annuler</a>
+					
+				</form>
+				
+			</article>
+		</div>
+	</main>
+	
+	<!-- le pied de page -->
+	
+	<footer>
+		<%- include ('../../partials/footer.ejs') %>
+		
+	</footer>
+</body>
+</html>

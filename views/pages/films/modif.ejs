@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<%- include ('../../partials/head.ejs') %>
+	
+</head>
+<body>
+	
+	<!-- entete de la page -->
+	<header>
+		<%- include ('../../partials/header.ejs') %>
+	</header>
+	
+	<!-- le navbar de la page -->
+	<nav>
+		<%- include ('../../partials/nav.ejs') %>
+		
+	</nav>
+	
+	<!-- le contenu -->
+	<main>
+		<h3><%= title %></h3>
+		
+		<div>
+			<article id="art2">
+				
+				
+				<form action="/modif/<%= data.id %>?_method=PUT", method="post">
+					<label>Titre: </label>
+					<input value="<%=data.title%>" type="text" placeholder="donnez le titre" name="titre" /><br>
+					
+					<label>Description: </label>
+					<input value="<%=data.description%>" type="text" placeholder="donnez la description" name="description" /><br>
+					
+					<label>Année: </label>
+					<input value="<%=data.year%>" type="text" placeholder="donnez l'année" name="annee"/><br>
+					
+					<label>Auteur: </label>
+					<input value="<%=data.author%>" type="text" placeholder="donnez l'auteur" name="auteur" /><br>
+					
+					<label>Genre: </label>
+					<select value="<%=data.genre%>" name="genre" id="genre">
+						<option value="ACTION" <% data.genre == 'ACTION' ? 'select' : '' %> >Action</option>
+						<option value="ROMANCE" <% data.genre == 'ROMANCE' ? 'select' : '' %>>Romance</option>
+						<option value="DRAME" <% data.genre == 'DRAME' ? 'select' : '' %>>Drame</option>
+						<option value="COMEDIE" <% data.genre == 'COMEDIE' ? 'select' : '' %>>Comédie</option>
+						<option value="ANIME" <% data.genre == 'ANIME' ? 'select' : '' %>>Dessin animé</option>
+					</select><br>
+					
+					
+					<label>Catégorie film: </label>
+					<input type="radio" value="1" name="categorie" <% data.is_serie == 1 ? 'checked' : '' %> /> Film
+					<input type="radio" value="0" name="categorie" <% data.is_serie ==0 ? 'checked' : '' %> /> Série
+					<br><br><br><br><br>
+					
+					<button type="submit">Modifier</button>&nbsp;
+					<a href="/">Annuler</a>
+					
+				</form>
+				
+			</article>
+		</div>
+	</main>
+	
+	<!-- le pied de page -->
+	
+	<footer>
+		<%- include ('../../partials/footer.ejs') %>
+		
+	</footer>
+</body>
+</html>

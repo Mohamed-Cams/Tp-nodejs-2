@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<%- include ('../../partials/head.ejs') %>
+	
+</head>
+<body>
+	
+	<!-- entete de la page -->
+	<header>
+		<%- include ('../../partials/header.ejs') %>
+	</header>
+	
+	<!-- le navbar de la page -->
+	<nav>
+		<%- include ('../../partials/nav.ejs') %>
+		
+	</nav>
+	
+	<!-- le contenu -->
+	<main>
+		<h3><%= title %></h3>
+		
+		<div>
+			<article id="art2">
+				
+				
+						
+					    <tr>
+						<label>Titre: </label>
+							<h1><%= titles%></h1>
+							<br>
+							<label>Description: </label>
+							<td><textarea name="" id="" cols="30" rows="10"><%= description%></textarea>
+							<br><br><br>
+							<label>Genre: </label>
+							<h2><%= genre%></h2>
+							<br>
+							<label>Année: </label>
+							<h2><%= year%></h2>
+							<br>
+							<label>Auteur: </label>
+                            <h2><%= author%></h2>
+						</tr>
+					<br><br><br><br><br>
+
+					<a href="/">Retour</a>
+					
+
+				
+			</article>
+		</div>
+	</main>
+	
+	<!-- le pied de page -->
+	
+	<footer>
+		<%- include ('../../partials/footer.ejs') %>
+		
+	</footer>
+</body>
+</html>
